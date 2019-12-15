@@ -11,28 +11,53 @@
 
 
 <body>
-    <img class="crystal-image" src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" alt="crystals">
+    <img class="crystal-image1" src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" alt="crystals">
 
-    <img class="crystal-image" src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" alt="crystals">
+    <img class="crystal-image2" src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" alt="crystals">
     
-    <img class="crystal-image" src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" alt="crystals">
+    <img class="crystal-image3" src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" alt="crystals">
 
-    <img class="crystal-image" src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" alt="crystals">
+    <img class="crystal-image4" src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" alt="crystals">
 
 <script type="text/javascript">
 
 var numberOptions = [];
+var targetNumber = Math.floor(Math.random() * 120) + 19;
+console.log(targetNumber);
 
 for (var i = 0; i < 4; i++) {
-    var randomNumber = Math.floor(Math.random() * 120) + 19;
+    var randomNumber = Math.floor(Math.random() * 12) + 1;
     numberOptions.push(randomNumber);
 }
 console.log(numberOptions);
 
+$(".crystal-image1").attr("data-crystalvalue", numberOptions[0]);
+$(".crystal-image2").attr("data-crystalvalue", numberOptions[1]);
+$(".crystal-image3").attr("data-crystalvalue", numberOptions[2]);
+$(".crystal-image4").attr("data-crystalvalue", numberOptions[3]);
 
-$(".crystal-image").on("click", function(){
-    alert("click");
+$(".crystal-image1").on("click", function(){
+    var crystalValue = ($(this).attr("data-crystalvalue"))
+    crystalValue = parseInt(crystalValue);
+    alert(crystalValue);
 })
+$(".crystal-image2").on("click", function(){
+    var crystalValue = ($(this).attr("data-crystalvalue"))
+    crystalValue = parseInt(crystalValue);
+    alert(crystalValue);
+})
+$(".crystal-image3").on("click", function(){
+    var crystalValue = ($(this).attr("data-crystalvalue"))
+    crystalValue = parseInt(crystalValue);
+    alert(crystalValue);
+})
+$(".crystal-image4").on("click", function(){
+    var crystalValue = ($(this).attr("data-crystalvalue"))
+    crystalValue = parseInt(crystalValue);
+    alert(crystalValue);
+})
+
+
 
 
 

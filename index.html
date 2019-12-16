@@ -19,43 +19,75 @@
 
     <img class="crystal-image4" src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" alt="crystals">
 
+    <div class="counter"></div>
+    <div class="target"></div>
+
 <script type="text/javascript">
 
+//set our counter variable
+var theCounter = 0;
+//array to hold the number value for each image
 var numberOptions = [];
+//generate a random target number
 var targetNumber = Math.floor(Math.random() * 120) + 19;
 console.log(targetNumber);
+//push target number to page
+$('.target').text("Target Number: " + targetNumber);
 
+
+//generate 4 random numbers and push them to the array above
 for (var i = 0; i < 4; i++) {
     var randomNumber = Math.floor(Math.random() * 12) + 1;
     numberOptions.push(randomNumber);
 }
 console.log(numberOptions);
 
+//add an attribute to the images to hold the value
 $(".crystal-image1").attr("data-crystalvalue", numberOptions[0]);
 $(".crystal-image2").attr("data-crystalvalue", numberOptions[1]);
 $(".crystal-image3").attr("data-crystalvalue", numberOptions[2]);
 $(".crystal-image4").attr("data-crystalvalue", numberOptions[3]);
 
+//for each of the images..
+//if clicked take the value of the image and add it to the counter
 $(".crystal-image1").on("click", function(){
-    var crystalValue = ($(this).attr("data-crystalvalue"))
-    crystalValue = parseInt(crystalValue);
-    alert(crystalValue);
+    var crystalValue1 = ($(this).attr("data-crystalvalue"))
+    crystalValue1 = parseInt(crystalValue1);
+    theCounter = theCounter + $(this).val("data-crystalvalue")
+    alert(crystalValue1);
 })
 $(".crystal-image2").on("click", function(){
-    var crystalValue = ($(this).attr("data-crystalvalue"))
-    crystalValue = parseInt(crystalValue);
-    alert(crystalValue);
+    var crystalValue2 = ($(this).attr("data-crystalvalue"))
+    crystalValue2 = parseInt(crystalValue2);
+    alert(crystalValue2);
 })
 $(".crystal-image3").on("click", function(){
-    var crystalValue = ($(this).attr("data-crystalvalue"))
-    crystalValue = parseInt(crystalValue);
-    alert(crystalValue);
+    var crystalValue3 = ($(this).attr("data-crystalvalue"))
+    crystalValue3 = parseInt(crystalValue3);
+    alert(crystalValue3);
 })
 $(".crystal-image4").on("click", function(){
-    var crystalValue = ($(this).attr("data-crystalvalue"))
-    crystalValue = parseInt(crystalValue);
-    alert(crystalValue);
-})
+    var crystalValue4 = ($(this).attr("data-crystalvalue"))
+    crystalValue4 = parseInt(crystalValue4);
+    alert(crystalValue4);
+}) 
+
+//update the page with the counter value
+$('.counter').text("Your Number: " + theCounter);
+
+console.log(theCounter);
+
+//i am working on figuring out how to add the value of each crystal to the counter
+//PSEUODOCODE
+//when a crystal image is clicked add the value of the crystal to teh counter
+//once those have been added push it to the scoreboard
+//create variable for user's wins and losses
+//if the users counter goes over the target number, then +1 to losses
+//reset game and give new values to images and reset target number
+//if the users counter == target number, then +1 to wins
+//reset game and give new values to images and reset target number
+//make game prettier with bootstrap and css
+
 
 
 

@@ -21,9 +21,13 @@
 
     <div class="counter"></div>
     <div class="target"></div>
+    <div class="wins"></div>
+    <div class="losses"></div>
 
 <script type="text/javascript">
 
+var wins = 0;
+var losses = 0;
 //set our counter variable
 var theCounter = 0;
 //array to hold the number value for each image
@@ -53,29 +57,109 @@ $(".crystal-image4").attr("data-crystalvalue", numberOptions[3]);
 $(".crystal-image1").on("click", function(){
     var crystalValue1 = ($(this).attr("data-crystalvalue"))
     crystalValue1 = parseInt(crystalValue1);
-    theCounter = theCounter + $(this).val("data-crystalvalue")
+    theCounter = theCounter + crystalValue1
     alert(crystalValue1);
+    $('.counter').text("Your Number: " + theCounter);
+    if (theCounter == targetNumber) {
+        alert("You win!")
+        wins++;
+        theCounter = 0;
+        targetNumber = Math.floor(Math.random() * 120) + 19;
+        $('.target').text("Target Number: " + targetNumber);
+
+    }
+    if (theCounter > targetNumber) {
+        alert("You Lose!");
+        losses++;
+        theCounter = 0;
+        targetNumber = Math.floor(Math.random() * 120) + 19;
+        $('.target').text("Target Number: " + targetNumber);
+
+    }
+    $('.wins').text("Wins: " + wins);
+    $('.losses').text("Losses: " + losses);
 })
 $(".crystal-image2").on("click", function(){
     var crystalValue2 = ($(this).attr("data-crystalvalue"))
     crystalValue2 = parseInt(crystalValue2);
+    theCounter = theCounter + crystalValue2
     alert(crystalValue2);
+    $('.counter').text("Your Number: " + theCounter);
+    if (theCounter == targetNumber) {
+        alert("You win!")
+        wins++;
+        theCounter = 0;
+        targetNumber = Math.floor(Math.random() * 120) + 19;
+        $('.target').text("Target Number: " + targetNumber);
+        
+    }
+    if (theCounter > targetNumber) {
+        alert("You Lose!");
+        losses++;
+        theCounter = 0;
+        targetNumber = Math.floor(Math.random() * 120) + 19;
+        $('.target').text("Target Number: " + targetNumber);
+        
+    }
+    $('.wins').text("Wins: " + wins);
+    $('.losses').text("Losses: " + losses);
 })
 $(".crystal-image3").on("click", function(){
     var crystalValue3 = ($(this).attr("data-crystalvalue"))
     crystalValue3 = parseInt(crystalValue3);
+    theCounter = theCounter + crystalValue3
     alert(crystalValue3);
+    $('.counter').text("Your Number: " + theCounter);
+    if (theCounter == targetNumber) {
+        alert("You win!")
+        wins++;
+        theCounter = 0;
+        targetNumber = Math.floor(Math.random() * 120) + 19;
+        $('.target').text("Target Number: " + targetNumber);
+
+    }
+    if (theCounter > targetNumber) {
+        alert("You Lose!");
+        losses++;
+        theCounter = 0;
+        targetNumber = Math.floor(Math.random() * 120) + 19;
+        $('.target').text("Target Number: " + targetNumber);
+
+    }
+    $('.wins').text("Wins: " + wins);
+    $('.losses').text("Losses: " + losses);
 })
 $(".crystal-image4").on("click", function(){
     var crystalValue4 = ($(this).attr("data-crystalvalue"))
     crystalValue4 = parseInt(crystalValue4);
+    theCounter = theCounter + crystalValue4
     alert(crystalValue4);
+    $('.counter').text("Your Number: " + theCounter);
+    if (theCounter == targetNumber) {
+        alert("You win!")
+        wins++;
+        theCounter = 0;
+        targetNumber = Math.floor(Math.random() * 120) + 19;
+        $('.target').text("Target Number: " + targetNumber);
+
+    }
+    if (theCounter > targetNumber) {
+        alert("You Lose!");
+        losses++;
+        theCounter = 0;
+        targetNumber = Math.floor(Math.random() * 120) + 19;
+        $('.target').text("Target Number: " + targetNumber);
+
+    }
+    $('.wins').text("Wins: " + wins);
+    $('.losses').text("Losses: " + losses);
 }) 
 
 //update the page with the counter value
 $('.counter').text("Your Number: " + theCounter);
 
 console.log(theCounter);
+
 
 //i am working on figuring out how to add the value of each crystal to the counter
 //PSEUODOCODE
